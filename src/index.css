@@ -111,3 +111,19 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+
+@layer utilities {
+  .glow-text {
+    text-shadow:
+      0 0 20px rgba(227, 30, 36, 0.8),
+      0 0 30px rgba(227, 30, 36, 0.6);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px rgba(227, 30, 36, 0.4);
+  }
+
+  .glow-hover:hover {
+    box-shadow: 0 0 30px rgba(227, 30, 36, 0.6);
+  }
+}

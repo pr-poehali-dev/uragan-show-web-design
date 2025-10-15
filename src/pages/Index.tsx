@@ -54,13 +54,13 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-primary/30">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <h1 className="text-2xl font-bold text-primary font-heading">URAGAN SHOW</h1>
+            <h1 className="text-2xl font-bold text-primary font-heading drop-shadow-[0_0_15px_rgba(227,30,36,0.8)]">URAGAN SHOW</h1>
             <div className="hidden md:flex gap-6">
               {['Главная', 'О группе', 'Репертуар', 'Видео', 'Состав', 'Контакты'].map((item, idx) => (
                 <button
                   key={idx}
                   onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                  className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                  className="text-foreground hover:text-primary hover:drop-shadow-[0_0_8px_rgba(227,30,36,0.6)] transition-all duration-300 font-medium"
                 >
                   {item}
                 </button>
@@ -79,11 +79,11 @@ const Index = () => {
           }}
         />
         <div className="relative z-10 text-center text-white animate-fade-in">
-          <h2 className="text-6xl md:text-8xl font-bold mb-6 font-heading">URAGAN SHOW</h2>
+          <h2 className="text-6xl md:text-8xl font-bold mb-6 font-heading text-primary drop-shadow-[0_0_30px_rgba(227,30,36,0.9)]">URAGAN SHOW</h2>
           <p className="text-xl md:text-2xl mb-8 text-gray-300">Кавер-группа №1 для вашего мероприятия</p>
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg font-semibold"
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg font-semibold shadow-[0_0_20px_rgba(227,30,36,0.6)] hover:shadow-[0_0_30px_rgba(227,30,36,0.8)] transition-all duration-300"
             onClick={() => scrollToSection('контакты')}
           >
             Забронировать выступление
@@ -93,7 +93,7 @@ const Index = () => {
 
       <section id="о-группе" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-12 font-heading">О группе</h2>
+          <h2 className="text-5xl font-bold text-center mb-12 font-heading text-primary drop-shadow-[0_0_20px_rgba(227,30,36,0.5)]">О группе</h2>
           <div className="max-w-3xl mx-auto">
             <Card className="bg-card border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-8">
@@ -115,12 +115,12 @@ const Index = () => {
 
       <section id="репертуар" className="py-20 bg-muted/20">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-12 font-heading">Репертуар</h2>
+          <h2 className="text-5xl font-bold text-center mb-12 font-heading text-primary drop-shadow-[0_0_20px_rgba(227,30,36,0.5)]">Репертуар</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {repertoire.map((item, idx) => (
               <Card 
                 key={idx} 
-                className="bg-card hover:scale-105 transition-transform duration-300 border-2 border-primary/20 hover:border-primary cursor-pointer"
+                className="bg-card hover:scale-105 transition-all duration-300 border-2 border-primary/20 hover:border-primary hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] cursor-pointer"
               >
                 <CardContent className="p-6 text-center">
                   <div className="mb-4 flex justify-center">
@@ -136,7 +136,7 @@ const Index = () => {
 
       <section id="видео" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-12 font-heading">Видео</h2>
+          <h2 className="text-5xl font-bold text-center mb-12 font-heading text-primary drop-shadow-[0_0_20px_rgba(227,30,36,0.5)]">Видео</h2>
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {videos.map((video, idx) => (
               <Card key={idx} className="bg-card overflow-hidden border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
@@ -156,12 +156,12 @@ const Index = () => {
 
       <section id="состав" className="py-20 bg-muted/20">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-12 font-heading">Состав</h2>
+          <h2 className="text-5xl font-bold text-center mb-12 font-heading text-primary drop-shadow-[0_0_20px_rgba(227,30,36,0.5)]">Состав</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {bandMembers.map((member, idx) => (
               <Card 
                 key={idx} 
-                className="bg-card hover:scale-105 transition-transform duration-300 border-2 border-primary/20 hover:border-primary"
+                className="bg-card hover:scale-105 transition-all duration-300 border-2 border-primary/20 hover:border-primary hover:shadow-[0_0_20px_rgba(227,30,36,0.4)]"
               >
                 <CardContent className="p-6 text-center">
                   <div className="w-24 h-24 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
@@ -178,7 +178,7 @@ const Index = () => {
 
       <section id="контакты" className="py-20 bg-card/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-12 font-heading">Контакты</h2>
+          <h2 className="text-5xl font-bold text-center mb-12 font-heading text-primary drop-shadow-[0_0_20px_rgba(227,30,36,0.5)]">Контакты</h2>
           <div className="max-w-2xl mx-auto">
             <Card className="bg-card/80 backdrop-blur-sm border-2 border-primary/30">
               <CardContent className="p-8">
@@ -221,22 +221,22 @@ const Index = () => {
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold text-lg py-6"
+                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold text-lg py-6 shadow-[0_0_20px_rgba(227,30,36,0.6)] hover:shadow-[0_0_30px_rgba(227,30,36,0.8)] transition-all duration-300"
                   >
                     Отправить заявку
                   </Button>
                 </form>
                 <div className="mt-8 pt-8 border-t border-primary/20 text-center space-y-4">
                   <div className="flex items-center justify-center gap-2">
-                    <Icon name="Phone" size={24} className="text-primary" />
+                    <Icon name="Phone" size={24} className="text-primary drop-shadow-[0_0_10px_rgba(227,30,36,0.6)]" />
                     <span className="text-lg">+7 (999) 123-45-67</span>
                   </div>
                   <div className="flex items-center justify-center gap-2">
-                    <Icon name="Mail" size={24} className="text-primary" />
+                    <Icon name="Mail" size={24} className="text-primary drop-shadow-[0_0_10px_rgba(227,30,36,0.6)]" />
                     <span className="text-lg">info@uragan-show.ru</span>
                   </div>
                   <div className="flex items-center justify-center gap-2">
-                    <Icon name="MapPin" size={24} className="text-primary" />
+                    <Icon name="MapPin" size={24} className="text-primary drop-shadow-[0_0_10px_rgba(227,30,36,0.6)]" />
                     <span className="text-lg">Москва, Россия</span>
                   </div>
                 </div>
