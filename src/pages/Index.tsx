@@ -31,24 +31,53 @@ const Index = () => {
   };
 
   const repertoire = [
-    { title: 'Современные хиты', icon: 'Music2' },
-    { title: 'Рок классика', icon: 'Guitar' },
-    { title: 'Поп музыка', icon: 'Radio' },
-    { title: 'Танцевальные треки', icon: 'Headphones' },
+    { artist: 'Metallica', song: 'Enter Sandman' },
+    { artist: 'AC/DC', song: 'Highway to Hell' },
+    { artist: 'Nirvana', song: 'Smells Like Teen Spirit' },
+    { artist: 'Queen', song: 'Bohemian Rhapsody' },
+    { artist: 'Led Zeppelin', song: 'Stairway to Heaven' },
+    { artist: 'The Beatles', song: 'Come Together' },
+    { artist: 'Pink Floyd', song: 'Comfortably Numb' },
+    { artist: 'Guns N\' Roses', song: 'Sweet Child O\' Mine' },
   ];
 
-  const bandMembers = [
-    { name: 'Алексей Иванов', role: 'Вокал', icon: 'Mic2' },
-    { name: 'Мария Петрова', role: 'Клавиши', icon: 'Music' },
-    { name: 'Дмитрий Сидоров', role: 'Гитара', icon: 'Guitar' },
-    { name: 'Ольга Смирнова', role: 'Ударные', icon: 'Drum' },
+  const events = [
+    { 
+      title: 'День рождения',
+      description: 'Сделаем ваш праздник незабываемым! Играем любимые хиты именинника и его гостей.',
+      icon: 'Cake'
+    },
+    { 
+      title: 'Свадьба',
+      description: 'Нежные баллады для первого танца и энергичные хиты для веселья гостей.',
+      icon: 'Heart'
+    },
+    { 
+      title: 'Корпоратив',
+      description: 'Превратим ваш корпоратив в яркое событие года! Энергичные рок-хиты и интерактив.',
+      icon: 'Briefcase'
+    },
+    { 
+      title: 'Выпускной',
+      description: 'Современные хиты, культовые рок-композиции и мощная энергетика сцены.',
+      icon: 'GraduationCap'
+    },
   ];
 
-  const videos = [
-    { title: 'Live выступление 2024', id: 'dQw4w9WgXcQ' },
-    { title: 'Корпоративное мероприятие', id: 'dQw4w9WgXcQ' },
-    { title: 'Свадебная церемония', id: 'dQw4w9WgXcQ' },
+  const advantages = [
+    { text: 'Мощный live-звук с профессиональной световой шоу-программой', icon: 'Volume2' },
+    { text: 'Состав адаптируем под ваш формат и бюджет', icon: 'Users' },
+    { text: 'Играем то, что зажигает именно вашу публику', icon: 'Music' },
+    { text: 'Ответственность, драйв и отличное настроение гарантируем', icon: 'Zap' },
   ];
+
+  const gallery = [
+    'https://cdn.poehali.dev/projects/afad4840-81ff-41c7-af05-d5db6a5ab3a9/files/a53d9572-77f4-43ca-8e66-cc20d77ca592.jpg',
+    'https://cdn.poehali.dev/projects/afad4840-81ff-41c7-af05-d5db6a5ab3a9/files/8249d3c2-e28a-4a1a-9694-1a87d71b06b1.jpg',
+    'https://cdn.poehali.dev/projects/afad4840-81ff-41c7-af05-d5db6a5ab3a9/files/1fff8671-2142-4820-9478-eff977b28e09.jpg',
+  ];
+
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -57,11 +86,11 @@ const Index = () => {
           <div className="flex items-center justify-between h-16">
             <Logo />
             <div className="hidden md:flex gap-6">
-              {['Главная', 'О группе', 'Репертуар', 'Видео', 'Состав', 'Контакты'].map((item, idx) => (
+              {['Главная', 'Мероприятия', 'Репертуар', 'Галерея', 'Контакты'].map((item, idx) => (
                 <button
                   key={idx}
-                  onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                  className="text-foreground hover:text-primary hover:drop-shadow-[0_0_8px_rgba(227,30,36,0.6)] transition-all duration-300 font-medium"
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="text-foreground hover:text-primary hover:drop-shadow-[0_0_8px_rgba(227,30,36,0.6)] transition-all duration-300 font-medium font-bebas text-lg tracking-wide"
                 >
                   {item}
                 </button>
@@ -75,114 +104,167 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://v3b.fal.media/files/b/zebra/QkxRUU_if9sgs_-TmMoPh_output.png)',
-            filter: 'brightness(0.4)'
+            backgroundImage: 'url(https://cdn.poehali.dev/projects/afad4840-81ff-41c7-af05-d5db6a5ab3a9/files/a53d9572-77f4-43ca-8e66-cc20d77ca592.jpg)'
           }}
-        />
-        <div className="relative z-10 text-center text-white animate-fade-in">
-          <h2 className="text-6xl md:text-8xl font-bold mb-6 font-heading text-primary drop-shadow-[0_0_30px_rgba(227,30,36,0.9)]">URAGAN SHOW</h2>
-          <p className="text-xl md:text-2xl mb-8 text-gray-300">Кавер-группа №1 для вашего мероприятия</p>
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background"></div>
+        </div>
+        <div className="relative z-10 text-center text-white animate-fade-in px-4">
+          <h1 className="text-7xl md:text-9xl font-bebas mb-6 text-white tracking-[0.15em] glow-text">
+            URAGAN SHOW
+          </h1>
+          <p className="text-xl md:text-3xl mb-8 text-white/90 font-bebas tracking-wider">Легендарные хиты в живом исполнении</p>
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg font-semibold shadow-[0_0_20px_rgba(227,30,36,0.6)] hover:shadow-[0_0_30px_rgba(227,30,36,0.8)] transition-all duration-300"
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-xl font-bebas tracking-wide shadow-[0_0_20px_rgba(227,30,36,0.6)] hover:shadow-[0_0_30px_rgba(227,30,36,0.8)] transition-all duration-300"
             onClick={() => scrollToSection('контакты')}
           >
+            <Icon name="Phone" size={24} className="mr-2" />
             Забронировать выступление
           </Button>
         </div>
       </section>
 
-      <section id="о-группе" className="py-20 bg-background">
+      <section id="мероприятия" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-12 font-heading text-primary drop-shadow-[0_0_20px_rgba(227,30,36,0.5)]">О группе</h2>
-          <div className="max-w-3xl mx-auto">
-            <Card className="bg-card border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
+          <h2 className="text-6xl font-bebas text-center mb-4 text-primary tracking-wider">Мероприятия</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">Создаём незабываемую атмосферу на любом празднике</p>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+            {events.map((event, idx) => (
+              <Card key={idx} className="bg-card border-2 border-primary/20 hover:border-primary/60 transition-all duration-300 hover:scale-105">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/20 rounded-lg">
+                      <Icon name={event.icon} size={32} className="text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bebas mb-2 text-primary tracking-wide">{event.title}</h3>
+                      <p className="text-foreground/80 leading-relaxed">{event.description}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bebas text-center mb-8 text-white tracking-wide">Наши преимущества</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {advantages.map((adv, idx) => (
+                <div key={idx} className="flex items-start gap-4 bg-card/50 p-6 rounded-lg border border-primary/10">
+                  <Icon name={adv.icon} size={24} className="text-primary mt-1 flex-shrink-0" />
+                  <p className="text-foreground/90">{adv.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="репертуар" className="py-20 bg-card/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-6xl font-bebas text-center mb-4 text-primary tracking-wider">Репертуар</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">Лучшие хиты мировой рок-сцены</p>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {repertoire.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-background p-6 rounded-lg border border-border hover:border-primary transition-all duration-300 group"
+              >
+                <div className="flex items-start gap-4">
+                  <Icon name="Music" size={24} className="text-primary mt-1 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <h3 className="font-bebas text-xl text-primary mb-1 tracking-wide">
+                      {item.artist}
+                    </h3>
+                    <p className="text-muted-foreground">{item.song}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center mt-8 text-muted-foreground text-lg">
+            И многие другие хиты мировой рок-сцены!
+          </p>
+        </div>
+      </section>
+
+      <section id="галерея" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-6xl font-bebas text-center mb-4 text-primary tracking-wider">Галерея</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">Моменты наших выступлений</p>
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {gallery.map((img, idx) => (
+              <div
+                key={idx}
+                className="aspect-square overflow-hidden rounded-lg glow-border hover:scale-105 transition-transform cursor-pointer"
+              >
+                <img
+                  src={img}
+                  alt={`Gallery ${idx + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="контакты" className="py-20 bg-card/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-6xl font-bebas text-center mb-4 text-primary tracking-wider">Контакты</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">Свяжитесь с нами для бронирования</p>
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <Card className="bg-background border-2 border-primary/20">
               <CardContent className="p-8">
-                <p className="text-lg leading-relaxed text-foreground/90 mb-4">
-                  URAGAN SHOW — это профессиональная кавер-группа, которая создает незабываемую атмосферу 
-                  на любых мероприятиях. Мы специализируемся на живых выступлениях с репертуаром от 
-                  классических хитов до современных треков.
-                </p>
-                <p className="text-lg leading-relaxed text-foreground/90">
-                  Наша команда — это опытные музыканты с консерваторским образованием и многолетним 
-                  опытом работы на крупнейших площадках страны. Мы гарантируем качественный звук, 
-                  энергичное шоу и море позитивных эмоций!
-                </p>
+                <h3 className="text-2xl font-bebas mb-6 text-primary tracking-wide">Наши контакты</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <Icon name="Phone" size={24} className="text-primary" />
+                    <div>
+                      <p className="font-semibold text-sm text-muted-foreground">Телефон</p>
+                      <a href="tel:+79991234567" className="text-lg hover:text-primary transition-colors">
+                        +7 (999) 123-45-67
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Icon name="Mail" size={24} className="text-primary" />
+                    <div>
+                      <p className="font-semibold text-sm text-muted-foreground">Email</p>
+                      <a href="mailto:info@uragan-show.ru" className="text-lg hover:text-primary transition-colors">
+                        info@uragan-show.ru
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Icon name="MapPin" size={24} className="text-primary" />
+                    <div>
+                      <p className="font-semibold text-sm text-muted-foreground">Город</p>
+                      <p className="text-lg">Москва, Россия</p>
+                    </div>
+                  </div>
+                  <div className="pt-6 border-t border-border">
+                    <p className="font-semibold text-sm text-muted-foreground mb-4">Социальные сети</p>
+                    <div className="flex gap-4">
+                      <a href="#" className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
+                        <Icon name="Instagram" size={24} className="text-primary" fallback="Music" />
+                      </a>
+                      <a href="#" className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
+                        <Icon name="Facebook" size={24} className="text-primary" fallback="Music" />
+                      </a>
+                      <a href="#" className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
+                        <Icon name="Youtube" size={24} className="text-primary" fallback="Music" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      <section id="репертуар" className="py-20 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-12 font-heading text-primary drop-shadow-[0_0_20px_rgba(227,30,36,0.5)]">Репертуар</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {repertoire.map((item, idx) => (
-              <Card 
-                key={idx} 
-                className="bg-card hover:scale-105 transition-all duration-300 border-2 border-primary/20 hover:border-primary hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] cursor-pointer"
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    <Icon name={item.icon} size={48} className="text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold font-heading">{item.title}</h3>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="видео" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-12 font-heading text-primary drop-shadow-[0_0_20px_rgba(227,30,36,0.5)]">Видео</h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {videos.map((video, idx) => (
-              <Card key={idx} className="bg-card overflow-hidden border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
-                <CardContent className="p-0">
-                  <div className="aspect-video bg-muted flex items-center justify-center">
-                    <Icon name="Play" size={64} className="text-primary" />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-lg font-heading">{video.title}</h3>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="состав" className="py-20 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-12 font-heading text-primary drop-shadow-[0_0_20px_rgba(227,30,36,0.5)]">Состав</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {bandMembers.map((member, idx) => (
-              <Card 
-                key={idx} 
-                className="bg-card hover:scale-105 transition-all duration-300 border-2 border-primary/20 hover:border-primary hover:shadow-[0_0_20px_rgba(227,30,36,0.4)]"
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="w-24 h-24 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
-                    <Icon name={member.icon} size={48} className="text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 font-heading">{member.name}</h3>
-                  <p className="text-muted-foreground">{member.role}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="контакты" className="py-20 bg-card/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-12 font-heading text-primary drop-shadow-[0_0_20px_rgba(227,30,36,0.5)]">Контакты</h2>
-          <div className="max-w-2xl mx-auto">
-            <Card className="bg-card/80 backdrop-blur-sm border-2 border-primary/30">
+            <Card className="bg-background border-2 border-primary/20">
               <CardContent className="p-8">
+                <h3 className="text-2xl font-bebas mb-6 text-primary tracking-wide">Оставить заявку</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Input
