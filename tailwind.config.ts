@@ -21,6 +21,7 @@ export default {
 			fontFamily: {
 				sans: ['Open Sans', 'sans-serif'],
 				heading: ['Montserrat', 'sans-serif'],
+				bebas: ['Bebas Neue', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
