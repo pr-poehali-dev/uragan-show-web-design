@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import Icon from '@/components/ui/icon';
+import Logo from '@/components/Logo';
 
 const Index = () => {
   const { toast } = useToast();
@@ -54,7 +55,7 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-primary/30">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <h1 className="text-2xl font-bold text-primary font-heading drop-shadow-[0_0_15px_rgba(227,30,36,0.8)]">URAGAN SHOW</h1>
+            <Logo />
             <div className="hidden md:flex gap-6">
               {['Главная', 'О группе', 'Репертуар', 'Видео', 'Состав', 'Контакты'].map((item, idx) => (
                 <button
