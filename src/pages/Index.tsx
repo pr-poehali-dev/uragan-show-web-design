@@ -51,7 +51,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 w-full bg-secondary/95 backdrop-blur-sm z-50 border-b border-primary/20">
+      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-primary/30">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <h1 className="text-2xl font-bold text-primary font-heading">URAGAN SHOW</h1>
@@ -60,7 +60,7 @@ const Index = () => {
                 <button
                   key={idx}
                   onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                  className="text-white hover:text-primary transition-colors duration-300 font-medium"
+                  className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
                 >
                   {item}
                 </button>
@@ -80,7 +80,7 @@ const Index = () => {
         />
         <div className="relative z-10 text-center text-white animate-fade-in">
           <h2 className="text-6xl md:text-8xl font-bold mb-6 font-heading">URAGAN SHOW</h2>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200">Кавер-группа №1 для вашего мероприятия</p>
+          <p className="text-xl md:text-2xl mb-8 text-gray-300">Кавер-группа №1 для вашего мероприятия</p>
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg font-semibold"
@@ -95,14 +95,14 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-5xl font-bold text-center mb-12 font-heading">О группе</h2>
           <div className="max-w-3xl mx-auto">
-            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
+            <Card className="bg-card border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-8">
-                <p className="text-lg leading-relaxed text-foreground/80 mb-4">
+                <p className="text-lg leading-relaxed text-foreground/90 mb-4">
                   URAGAN SHOW — это профессиональная кавер-группа, которая создает незабываемую атмосферу 
                   на любых мероприятиях. Мы специализируемся на живых выступлениях с репертуаром от 
                   классических хитов до современных треков.
                 </p>
-                <p className="text-lg leading-relaxed text-foreground/80">
+                <p className="text-lg leading-relaxed text-foreground/90">
                   Наша команда — это опытные музыканты с консерваторским образованием и многолетним 
                   опытом работы на крупнейших площадках страны. Мы гарантируем качественный звук, 
                   энергичное шоу и море позитивных эмоций!
@@ -113,14 +113,14 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="репертуар" className="py-20 bg-muted/30">
+      <section id="репертуар" className="py-20 bg-muted/20">
         <div className="container mx-auto px-4">
           <h2 className="text-5xl font-bold text-center mb-12 font-heading">Репертуар</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {repertoire.map((item, idx) => (
               <Card 
                 key={idx} 
-                className="hover:scale-105 transition-transform duration-300 border-2 border-primary/20 hover:border-primary cursor-pointer"
+                className="bg-card hover:scale-105 transition-transform duration-300 border-2 border-primary/20 hover:border-primary cursor-pointer"
               >
                 <CardContent className="p-6 text-center">
                   <div className="mb-4 flex justify-center">
@@ -139,9 +139,9 @@ const Index = () => {
           <h2 className="text-5xl font-bold text-center mb-12 font-heading">Видео</h2>
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {videos.map((video, idx) => (
-              <Card key={idx} className="overflow-hidden border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <Card key={idx} className="bg-card overflow-hidden border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
                 <CardContent className="p-0">
-                  <div className="aspect-video bg-secondary flex items-center justify-center">
+                  <div className="aspect-video bg-muted flex items-center justify-center">
                     <Icon name="Play" size={64} className="text-primary" />
                   </div>
                   <div className="p-4">
@@ -154,17 +154,17 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="состав" className="py-20 bg-muted/30">
+      <section id="состав" className="py-20 bg-muted/20">
         <div className="container mx-auto px-4">
           <h2 className="text-5xl font-bold text-center mb-12 font-heading">Состав</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {bandMembers.map((member, idx) => (
               <Card 
                 key={idx} 
-                className="hover:scale-105 transition-transform duration-300 border-2 border-primary/20 hover:border-primary"
+                className="bg-card hover:scale-105 transition-transform duration-300 border-2 border-primary/20 hover:border-primary"
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-24 h-24 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-24 h-24 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
                     <Icon name={member.icon} size={48} className="text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2 font-heading">{member.name}</h3>
@@ -176,11 +176,11 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="контакты" className="py-20 bg-secondary text-white">
+      <section id="контакты" className="py-20 bg-card/50">
         <div className="container mx-auto px-4">
           <h2 className="text-5xl font-bold text-center mb-12 font-heading">Контакты</h2>
           <div className="max-w-2xl mx-auto">
-            <Card className="bg-white/10 backdrop-blur-sm border-2 border-primary/30">
+            <Card className="bg-card/80 backdrop-blur-sm border-2 border-primary/30">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -189,7 +189,7 @@ const Index = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
-                      className="bg-white/90 text-secondary border-primary/20"
+                      className="bg-background border-primary/20"
                     />
                   </div>
                   <div>
@@ -199,7 +199,7 @@ const Index = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
-                      className="bg-white/90 text-secondary border-primary/20"
+                      className="bg-background border-primary/20"
                     />
                   </div>
                   <div>
@@ -208,7 +208,7 @@ const Index = () => {
                       value={formData.event}
                       onChange={(e) => setFormData({ ...formData, event: e.target.value })}
                       required
-                      className="bg-white/90 text-secondary border-primary/20"
+                      className="bg-background border-primary/20"
                     />
                   </div>
                   <div>
@@ -216,7 +216,7 @@ const Index = () => {
                       placeholder="Дополнительная информация"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="bg-white/90 text-secondary border-primary/20 min-h-[120px]"
+                      className="bg-background border-primary/20 min-h-[120px]"
                     />
                   </div>
                   <Button 
@@ -226,7 +226,7 @@ const Index = () => {
                     Отправить заявку
                   </Button>
                 </form>
-                <div className="mt-8 pt-8 border-t border-white/20 text-center space-y-4">
+                <div className="mt-8 pt-8 border-t border-primary/20 text-center space-y-4">
                   <div className="flex items-center justify-center gap-2">
                     <Icon name="Phone" size={24} className="text-primary" />
                     <span className="text-lg">+7 (999) 123-45-67</span>
@@ -246,9 +246,9 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="bg-secondary/95 text-white py-8 border-t border-primary/20">
+      <footer className="bg-background border-t border-primary/20 py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-300">© 2024 URAGAN SHOW. Все права защищены.</p>
+          <p className="text-muted-foreground">© 2024 URAGAN SHOW. Все права защищены.</p>
         </div>
       </footer>
     </div>
