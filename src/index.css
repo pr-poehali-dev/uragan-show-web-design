@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Cormorant+Garamond:wght@300;400;600&family=Raleway:wght@300;400;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,51 +6,51 @@
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 357 86% 51%;
+    --primary: 340 82% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 45 100% 51%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 357 86% 51%;
+    --accent: 340 82% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 357 86% 51%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 340 82% 52%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 10%;
+    --sidebar-background: 0 0% 100%;
 
-    --sidebar-foreground: 0 0% 95%;
+    --sidebar-foreground: 0 0% 10%;
 
-    --sidebar-primary: 357 86% 51%;
+    --sidebar-primary: 340 82% 52%;
 
     --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent: 0 0% 96%;
 
-    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 10%;
 
-    --sidebar-border: 0 0% 20%;
+    --sidebar-border: 0 0% 90%;
 
-    --sidebar-ring: 357 86% 51%;
+    --sidebar-ring: 340 82% 52%;
   }
 
   .dark {
@@ -99,7 +99,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Raleway", sans-serif;
   }
 
   h1,
@@ -108,22 +108,44 @@
   h4,
   h5,
   h6 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Playfair Display", serif;
   }
 }
 
 @layer utilities {
   .glow-text {
     text-shadow:
-      0 0 20px rgba(227, 30, 36, 0.8),
-      0 0 30px rgba(227, 30, 36, 0.6);
+      0 2px 10px rgba(219, 39, 119, 0.3),
+      0 4px 20px rgba(219, 39, 119, 0.2);
   }
 
   .glow-border {
-    box-shadow: 0 0 20px rgba(227, 30, 36, 0.4);
+    box-shadow: 0 4px 20px rgba(219, 39, 119, 0.15);
   }
 
   .glow-hover:hover {
-    box-shadow: 0 0 30px rgba(227, 30, 36, 0.6);
+    box-shadow: 0 8px 30px rgba(219, 39, 119, 0.25);
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+    background-size: 200% 200%;
+    animation: shimmer 3s ease infinite;
+  }
+
+  @keyframes shimmer {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 }

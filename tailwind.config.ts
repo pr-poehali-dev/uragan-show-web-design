@@ -19,9 +19,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Open Sans', 'sans-serif'],
-				heading: ['Montserrat', 'sans-serif'],
-				bebas: ['Bebas Neue', 'sans-serif'],
+				sans: ['Raleway', 'sans-serif'],
+				heading: ['Playfair Display', 'serif'],
+				elegant: ['Cormorant Garamond', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
